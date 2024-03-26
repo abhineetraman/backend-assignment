@@ -41,13 +41,21 @@ To set up and run the project, follow these steps:
 
 Clone the project repository.
 
+Setup the virtual environment
+
+* python3 -m venv venv
+
+Activate the Virtual Environment
+
+* source venv/bin/activate
+  
 Install the required Python packages.
 
 * pip install -r requirements.txt
 
 Run the Flask app.
 Run the following command to start the Flask development server:
-python app.py
+python3 app.py
 
 
 The API will be available at http://localhost:5000.
