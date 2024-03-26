@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Event API
+  version: 1.0.0
+  description: API for managing events.
+servers:
+  - url: http://localhost:5000
+paths:
+  /event:
+    post:
+      summary: Add a new event.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_name:
+                  type: string
+                  description: The name of the event.
+                city_name:
+                  type: string
+                  description: The city where the event is taking place.
+                date:
+                  type: string
+                  description: The date of the event.
+                time:
+                  type: string
+                  description: The time of the event.
+                latitude:
+                  type: number
+                  description: The latitude of the event location.
+                longitude:
+                  type: number
+                  description: The longitude of the event location.
+      responses:
+        '200':
+          description: Event added successfully.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessValidationError'
+  /events/find:
+    post:
+      summary: Find events.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_latitude:
+                  type: number
+                  description: The user's latitude.
+                user_longitude:
+                  type: number
+                  description: The user's longitude.
+                date:
+                  type: string
+                  description: The date of the events.
+      responses:
+        '200':
+          description: Events found.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessValidationError'
+        '404':
+          description: Not found.

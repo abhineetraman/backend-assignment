@@ -1,0 +1,13 @@
+# Dev environment
+pip
+autopep8
+
+# App
+flask
+flask-restful
+pytest
+numpy
+pandas
+matplotlib
+requests
+geopy
