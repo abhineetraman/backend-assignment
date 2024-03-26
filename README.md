@@ -35,9 +35,11 @@ The following challenges were encountered and addressed:
 **Calculating distances**: The distance between the user's location and the event location was calculated using Geopy instead of link for quick implementation.
 
 **Retrieving weather data**: The weather forecast for each event was retrieved from an external API.
-To set up and run the project, follow these steps:
+
 
 ## Setup and Run Instructions
+
+**To set up and run the project, follow these steps:**
 
 Clone the project repository.
 
