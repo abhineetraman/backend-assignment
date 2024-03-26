@@ -149,9 +149,9 @@ def test_event_find_missing_date():
 
 def test_event_find():
     test_data = {
-        "date" : "2024-03-01",
-        "user_latitude" : 85.234567567444,
-        "user_longitude" : 82.23564777381,
+        "date" : "2024-03-15",
+        "user_latitude" : 40.7128,
+        "user_longitude" : -74.0060,
     }
 
     response = requests.post('http://localhost:5000/events/find', json=test_data)
